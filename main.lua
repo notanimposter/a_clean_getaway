@@ -217,6 +217,7 @@ local current_interaction = nil
 
 function love.keypressed (key)
 	if seconds_until_sunrise > 0 then return end
+	if map:getTile (0,0) == 22 then return end
 	local switch = {
 		['w'] = function ()
 			if map:isWalkableAt (player.x, player.y-1) then
